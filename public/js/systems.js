@@ -22,7 +22,6 @@ $(function () {
                 console.log(response['data'])
 
                 let alertMessage = document.createElement('div')
-                let newData = document.createElement('tr')
 
                 var assignmentForm = document.getElementById('createAssignmentForm')
                 var assignmentTable = document.getElementById('tbody_assignment')
@@ -59,8 +58,6 @@ $(function () {
                         </div>
                     </td>
                 </tr>`);
-
-                // assignmentTable.appendChild(newData)
             }
         })
 
