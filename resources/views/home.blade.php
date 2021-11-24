@@ -10,16 +10,20 @@
     <table class="table table-compact w-full">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Actions Taken</th>
                 <th>On Date & Time</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td>INSERT</td>
-                <td>21`302130</td>
-            </tr>
+            @foreach ($logs as $l)
+                <tr>
+                    <td>{{ $l->id }}</td>
+                    <td>{{ $l->action }}</td>
+                    <td>{{ $l->created_at }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
