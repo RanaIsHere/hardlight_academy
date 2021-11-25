@@ -9,7 +9,7 @@ class AssignmentController extends Controller
 {
     public function launchAssignment()
     {
-        $assignmentData = Assignments::orderBy('id', 'DESC')->paginate(6);
+        $assignmentData = Assignments::orderBy('id', 'DESC')->get();
         return view('assignment', ['page' => 'Assignment', 'assignmentData' => $assignmentData]);
     }
 

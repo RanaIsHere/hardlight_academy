@@ -10,7 +10,7 @@
         <button class="btn btn-primary addAssignmentBtn">Add Assignment</button>
     </div>
 
-    <table class="table table-compact w-full overflow-x-auto">
+    <table class="table table-compact w-full overflow-x-auto overflow-y-scroll">
         <thead>
             <tr>
                 <th>#</th>
