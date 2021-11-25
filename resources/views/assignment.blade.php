@@ -26,7 +26,7 @@
 
         <tbody id="tbody_assignment">
             @if ($assignmentData->count() == 0)
-                <tr class="text-center">
+                <tr class="text-center" id="notFoundAlert">
                     <td colspan="8">
                         <h1 class="text-3xl">No data found</h1>
                     </td>
@@ -34,24 +34,27 @@
             @endif
 
             @foreach ($assignmentData as $asg)
-                <tr>
+                <tr class="asg-{{ $asg->id }}">
                     <td>{{ $asg->id }}</td>
                     <td>{{ $asg->nis }}</td>
                     <td>{{ $asg->nama_mapel }}</td>
                     <td>{{ $asg->nama_tugas }}</td>
                     <td>{{ $asg->deadline_time }}</td>
-                    <td>{{ $asg->status_pengerjaan }}</td>
+                    <td>
+                        <input type="checkbox" value="{{ $asg->status_pengerjaan }}" {{ $asg->status_pengerjaan == 0 ? '' :  "checked='1'"}} class="toggle toggle-lg toggleAssignmentStatus">
+                    </td>
                     <td>{{ $asg->skor }}</td>
                     <td>
                         <div class="dropdown dropdown-hover dropdown-left">
                             <div tabindex="0" class="m-1 btn">Edit</div> 
                             <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
                             <li>
-                                <a>Add Score</a>
-                            </li> 
+                                <a class="btn addScoreBtn">Add Score</a>
+                            </li>
+
                             <li>
-                                <a>Change Status</a>
-                            </li> 
+                                <a class="btn deleteBtn">Delete</a>
+                            </li>
                             </ul>
                         </div>
                     </td>

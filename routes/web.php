@@ -18,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'launchHome'])->name('home');
 Route::get('/assignment', [AssignmentController::class, 'launchAssignment'])->name('assignment');
 
+Route::post('/addScore', [AssignmentController::class, 'addScore'])->name('addScore');
 Route::post('/addAssignment', [AssignmentController::class, 'addAssignment'])->name('addAssignment');
+Route::post('/changeStatus', [AssignmentController::class, 'changeStatus'])->name('changeStatus');
+Route::post('/deleteAssignment', [AssignmentController::class, 'deleteAssignment'])->name('deleteAssignment');
